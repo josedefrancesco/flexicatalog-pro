@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Chocolate Cake",
+    "category": "bakery",
+    "price": "$25.00",
+    "description": "Delicious double chocolate layer cake made with organic ingredients."
+  },
+  {
+    "id": 2,
+    "name": "Wedding Photography Package",
+    "category": "photography",
+    "price": "$1200.00",
+    "description": "Full day coverage, two photographers, and 500+ edited digital pictures."
+  },
+  {
+    "id": 3,
+    "name": "Wireless Mechanical Keyboard",
+    "category": "tech",
+    "price": "$89.99",
+    "description": "RGB backlit mechanical keyboard with hot-swappable switches."
+  }
+]

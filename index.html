@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiCatalog Pro - Small Business Template</title>
+    <link rel="stylesheet" href="src/base.css">
+    <script src="src/main.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <h1>FlexiCatalog Pro</h1>
+        <nav>
+            <label for="category-filter">Filter by Type:</label>
+            <select id="category-filter">
+                <option value="all">All Products</option>
+                <option value="bakery">Bakery Items</option>
+                <option value="photography">Photography</option>
+                <option value="tech">Tech Shop</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalog-grid" class="catalog-grid">
+            <p class="loading">Loading catalog items...</p>
+        </section>
+    </main>
+
+    <div id="info-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
+        <section class="modal-content">
+            <span class="close-button" aria-label="Close modal">&times;</span>
+            <h2 id="modal-title">Product Inquiry</h2>
+            <p id="modal-description">Fill out the form below to request more info.</p>
+            
+            <form id="inquiry-form" novalidate>
+                <div class="form-group">
+                    <label for="user-name">Full Name *</label>
+                    <input type="text" id="user-name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email *</label>
+                    <input type="email" id="user-email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="user-notes">Message</label>
+                    <textarea id="user-notes" placeholder="Your questions..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FlexiCatalog Pro Team. WDD 231.</p>
+    </footer>
+</body>
+</html>

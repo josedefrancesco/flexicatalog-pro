@@ -1,0 +1,14 @@
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
