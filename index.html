@@ -9,21 +9,40 @@
 </head>
 <body>
     <header>
-        <h1>FlexiCatalog Pro</h1>
-        <nav>
-            <label for="category-filter">Filter by Type:</label>
-            <select id="category-filter">
-                <option value="all">All Products</option>
-                <option value="bakery">Bakery Items</option>
-                <option value="photography">Photography</option>
-                <option value="tech">Tech Shop</option>
-            </select>
-        </nav>
+        <div class="header-container">
+            <h1 class="logo">FlexiCatalog Pro</h1>
+            
+            <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                &#9776;
+            </button>
+
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href=".">Home</a></li>
+                    <li><a href="#catalog-section">Catalog</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="catalog-grid" class="catalog-grid">
-            <p class="loading">Loading catalog items...</p>
+        <section class="controls-section">
+            <div class="filter-group">
+                <label for="category-filter">Filter by Type:</label>
+                <select id="category-filter">
+                    <option value="all">All Products</option>
+                    <option value="bakery">Bakery Items</option>
+                    <option value="photography">Photography</option>
+                    <option value="tech">Tech Shop</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="catalog-section" class="catalog-container">
+            <div id="catalog-grid" class="catalog-grid">
+                <p class="loading">Loading catalog items...</p>
+            </div>
         </section>
     </main>
 
