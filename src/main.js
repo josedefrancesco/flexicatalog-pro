@@ -61,6 +61,7 @@ if (catalogGrid) {
 }
 
 document.addEventListener("DOMContentLoaded", initApp);
+
 const menuToggle = document.querySelector("#menu-toggle");
 const navMenu = document.querySelector("#nav-menu");
 
@@ -69,5 +70,62 @@ if (menuToggle && navMenu) {
         navMenu.classList.toggle("open");
         const isOpen = navMenu.classList.contains("open");
         menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+}
+
+const inquiryForm = document.querySelector("#inquiry-form");
+
+if (inquiryForm) {
+    inquiryForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nameInput = document.querySelector("#user-name");
+        const emailInput = document.querySelector("#user-email");
+        const nameError = document.querySelector("#name-error");
+        const emailError = document.querySelector("#email-error");
+
+        let isValid = true;
+
+        if (!nameInput.checkValidity()) {
+            isValid = false;
+            nameInput.classList.add("invalid");
+            if (nameInput.validity.valueMissing) {
+                nameError.textContent = "Please enter your full name.";
+            } else if (nameInput.validity.tooShort) {
+                nameError.textContent = "Name must be at least 3 characters long.";
+            } else {
+                nameError.textContent = "Name should only contain letters.";
+            }
+        } else {
+            nameInput.classList.remove("invalid");
+            nameError.textContent = "";
+        }
+
+        if (!emailInput.checkValidity()) {
+            isValid = false;
+            emailInput.classList.add("invalid");
+            if (emailInput.validity.valueMissing) {
+                emailError.textContent = "Please enter your email address.";
+            } else {
+                emailError.textContent = "Please enter a valid email address.";
+            }
+        } else {
+            emailInput.classList.remove("invalid");
+            emailError.textContent = "";
+        }
+
+        if (isValid) {
+            const toast = document.createElement("div");
+            toast.className = "toast-notification";
+            toast.textContent = `Thank you, ${nameInput.value}! Your inquiry has been sent successfully.`;
+            document.body.appendChild(toast);
+
+            inquiryForm.reset();
+            closeModal();
+
+            setTimeout(() => {
+                toast.remove();
+            }, 4000);
+        }
     });
 }
